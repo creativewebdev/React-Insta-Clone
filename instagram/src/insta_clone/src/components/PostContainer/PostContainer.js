@@ -1,4 +1,6 @@
 import React from 'react'
+import Comments from '../CommentSection/CommentSection.js'
+
 
 
 
@@ -28,6 +30,7 @@ return(
 <div>
 <i className="far fa-heart"> </i>
 <i className="far fa-comment"></i>
+<Comments comments={user.comments} />
 </div>
 
 
