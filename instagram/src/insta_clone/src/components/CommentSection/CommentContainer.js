@@ -3,7 +3,9 @@ import AddComments from './AddComments';
 import CommentSection from './CommentSection';
 import PropTypes from 'prop-types';
 
-
+const container = {
+    width: '45%'
+}
 class CommentContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -30,11 +32,10 @@ class CommentContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style ={container}>
         {this.state.comments.map((comment) => <CommentSection  comment={comment} />)}
 
         <AddComments 
-        
         comment={this.state.commentAdd}
         handleSubmit={this.handleSubmit}
         handleAddItems={this.handleAdd} />

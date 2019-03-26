@@ -8,7 +8,8 @@ import './App.css';
 
 const appStyle = {
   width: '100%',
-  height: 'auto'
+  height: 'auto',
+  fontSize: '20px'
 }
 
 class App extends Component {
@@ -35,12 +36,11 @@ class App extends Component {
     return (
       <div style={appStyle}>
         <Header />
-
+        <div>
         <PostContainer 
         data = {this.state.data} 
-        
         clicks={this.state.clicks}/>
-       
+       </div>
       </div>
     );
   }

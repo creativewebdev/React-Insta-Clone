@@ -2,7 +2,9 @@ import React from 'react'
 import Post from './Post.js'
 
 
-
+const postDiv = {
+  
+}
 
 const PostContainer = props => {
     console.log('PostContainer', props)
@@ -10,7 +12,8 @@ const PostContainer = props => {
 
 return(     
  
-<div >
+<div style={postDiv}>
+
         {props.data.map(data => (
           
           <Post 
