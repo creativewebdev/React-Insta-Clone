@@ -14,9 +14,11 @@ return(
         {props.data.map(data => (
           
           <Post 
+
             key={data.id}
             data={data}
-            
+            handleClick={props.handleClickIcon}
+            clicks={props.clicks}
           />
           
 

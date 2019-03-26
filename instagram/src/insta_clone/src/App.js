@@ -18,17 +18,28 @@ class App extends Component {
     this.state = {
 
       data: dummyData,
+      clicks: 0
 
     }
-    
-    
+  }
+
+
+  handleClickIcon() {
+    this.setState((clicks) => ({
+           clicks: clicks + 1,
+           
+      }));
   }
 
   render() {
     return (
       <div style={appStyle}>
         <Header />
-        <PostContainer data = {this.state.data}  />
+
+        <PostContainer 
+        data = {this.state.data} 
+        
+        clicks={this.state.clicks}/>
        
       </div>
     );

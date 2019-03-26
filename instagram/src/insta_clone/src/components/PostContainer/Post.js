@@ -8,6 +8,7 @@ const card={
 }
 
 
+
 const Post = props => {
     console.log('PostProps', props)
     
@@ -24,12 +25,16 @@ const Post = props => {
         </div>
         
         
-        <i className="far fa-heart"> </i>
+        <i onClick={props.handleClickIcon} className="far fa-heart">{props.clicks} </i>
         <i className="far fa-comment"></i>
         <p><strong>{props.data.likes} Likes </strong></p>
 
         
-        <CommentContainer comments={props.data.comments} />
+        <CommentContainer 
+        comments={props.data.comments} 
+        value={props.comment}
+        handleTodoChange={props.changeComment}
+        handleAddItems={props.addComment} />/>
       </div>
   
     )

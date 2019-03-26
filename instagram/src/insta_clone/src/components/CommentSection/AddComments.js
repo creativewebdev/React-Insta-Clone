@@ -6,15 +6,17 @@ const AddComments = props => {
 
     return (
     <div>
-
-    <input    
+    <form onSubmit={props.handleSubmit}>
+    <input  onChange = {props.handleAdd}  
             type="text"
-            name="comment"
-            placeholder= "Add Comment..."/>
+            placeholder= "Add Comment..."
+            value={props.commentAdd}/>
+    </form>
     </div>
+    
     )   
     
 
     }
-    
+
 export default AddComments
