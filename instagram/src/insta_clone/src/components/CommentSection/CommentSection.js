@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 
 const CommentSection = props => {
-        console.log('CommentDiv', props)
+        
      return(
         <div>
                 <span><strong>{props.comment.username}</strong></span>

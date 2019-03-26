@@ -10,27 +10,33 @@ const searchStyle ={
     margin: '15px'
     
 }
+
+const insta ={
+    margin: '0 10px'
+}
+
+const input = {
+    height: '20px',
+    widht: '40px'
+}
 const SearchBar = props =>{
+  
     return (
     <div style={searchStyle}>
-        <div>
-            <i className="fab fa-instagram"></i>
-            <span>|</span>
-            <span>Instagram</span>
+        <div style={insta}>
+            <i style={insta} className="fab fa-instagram"></i>
+            <span style={insta}>|</span>
+            <span style={insta}>Instagram</span>
         </div>
         <div>
-            <input 
-            onKeyDown={props.searchPosts}
-            type="text"
-            name="search"
-            placeholder="search"
-            value={props.username}
-            />
+        <input style={input} type="text" placeholder="Search" 
+         onChange={(event) => {props.change(event)
+                          props.postSearch(event)} } />
         </div>
-        <div>
-            <i className="far fa-compass"></i>
-            <i className="far fa-heart"> </i>
-            <i className="far fa-user"></i>
+        <div >
+            <i style={insta} className="far fa-compass"></i>
+            <i style={insta} className="far fa-heart"> </i>
+            <i style={insta} className="far fa-user"></i>
         </div>
     </div>
     )

@@ -9,6 +9,7 @@ const card={
     margin: '20px 0',
     fontSize: '20px',
     display: 'flex',
+    width: 'auto',
     flexDirection: 'column',
     alignItems: 'center',
     border: '1px solid black',
@@ -25,12 +26,11 @@ class Post extends Component {
   
         
         likes: props.data.likes
-        
-  
+
       }
     }
 
-    addLike = () => {
+    addLikes = () => {
         let likes = this.state.likes + 1;
         this.setState({ likes });
       };
@@ -39,24 +39,26 @@ class Post extends Component {
    render() {
        return(
         <div style={card}>
-            <div>
+        
+            
                 <Header data={this.props.data}/>
-            </div>
-        <div >
+           
+        
           <img
             src={this.props.data.imageUrl}
             alt="post"
           />
-        </div>
+        
         
         <Likes data={this.props.data} likes={this.state.likes} addLikes={this.addLikes}/>
-
         
-        <CommentContainer 
+        
+        <CommentContainer style={card}
         comments={this.props.data.comments} 
         value={this.props.comment}
         
         handleAddItems={this.props.addComment} />
+      
       </div>
   
        )

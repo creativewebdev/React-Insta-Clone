@@ -26,18 +26,22 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(dummyData);
+    
     this.setState({ data: dummyData });
   }
   
+  handleChange = event => {
+    this.setState({ comment: event.target.value });
+  };
 
-  postSearch = event => {
-    const data = this.state.data.filter(data => {
+  searchHandler = event => {
+    console.log(event.target.value)
+    const posts = this.state.data.filter(data => {
       if (data.username.includes(event.target.value)) {
         return data;
       }
     });
-    this.setState({ filteredPosts: data });
+    this.setState({ filteredPosts: posts });
   };
 
  
@@ -45,7 +49,7 @@ class App extends Component {
     return (
       <div style={appStyle}>
 
-        <Header postSearch={this.postSearch}/>
+        <Header postSearch={this.searchHandler} change={this.handleChange}/>
         <div>
           
         <PostContainer
@@ -55,7 +59,8 @@ class App extends Component {
             ? this.state.filteredPosts
             : this.state.data
         }
-                                            />
+           />
+
        </div>
       </div>
     );

@@ -7,7 +7,7 @@ const postDiv = {
 }
 
 const PostContainer = props => {
-    console.log('PostContainer', props)
+    
 
 
 return(     

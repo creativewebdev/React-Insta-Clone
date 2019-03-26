@@ -1,17 +1,21 @@
 import React from 'react';
 
+const icons={
+    display: 'flex',
+    textAlign: 'left'
+}
 const Likes = props => {
-    console.log(props)
+    
   return [
-    <div
+    <div style={icons}
      
-      key="likes-icons-container"
+      
       
     >
-      <div className="like-section-wrapper">
-        <i className="far fa-heart" onClick={props.addLikes} />
+      <div>
+        <i className="heart" className="far fa-heart" onClick={props.addLikes} />
       </div>
-      <div className="like-section-wrapper">
+      <div >
         <i className="far fa-comment" />
       </div>
     </div>,

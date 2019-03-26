@@ -13,7 +13,7 @@ const headerDiv={
 }
 
 const Header = props => {
-    console.log("Header", props)
+    
   return (
     <div >
       <div style={headerDiv}>
