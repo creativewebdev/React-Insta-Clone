@@ -1,6 +1,7 @@
 import React from 'react'
 import CommentContainer from '../CommentSection/CommentContainer';
 import Header from './Header'
+import PropTypes from 'prop-types';
 
 const card={
     margin: '20px 0',
@@ -25,7 +26,7 @@ const Post = props => {
         </div>
         
         
-        <i onClick={props.handleClickIcon} className="far fa-heart">{props.clicks} </i>
+        <i className="far fa-heart">{props.clicks} </i>
         <i className="far fa-comment"></i>
         <p><strong>{props.data.likes} Likes </strong></p>
 
@@ -39,6 +40,16 @@ const Post = props => {
   
     )
 }
+
+    Post.propTypes = {
+    post: PropTypes.shape({
+      username: PropTypes.string,
+      thumbnailUrl: PropTypes.string,
+      imageUrl: PropTypes.string,
+      likes: PropTypes.number
+    })
+  };
+  
 
 export default Post
 
