@@ -11,22 +11,21 @@ class CommentContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      commentAdd: ''
+      comment: ''
     };
   }
-
-
-  handleAdd = event => {
-    this.setState({ commentAdd: event.target.value});
+  
+  
+  handleComment = event => {
+    this.setState({ comment: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    const newComment = { text: this.state.commentAdd, username:"brandonA"  };
+    const newComment = { text: this.state.comment, username: 'brandon_allison' };
     const comments = this.state.comments.slice();
     comments.push(newComment);
-    this.setState({ comments, commentAdd: '' });
-    
+    this.setState({ comments, comment: '' });
   };
 
 
@@ -36,9 +35,9 @@ class CommentContainer extends React.Component {
         {this.state.comments.map((comment) => <CommentSection  comment={comment} />)}
 
         <AddComments 
-        comment={this.state.commentAdd}
-        handleSubmit={this.handleSubmit}
-        handleAddItems={this.handleAdd} />
+         comment={this.state.comment}
+         addComment={this.handleSubmit}
+         changeComment={this.handleComment} />
 
       </div>
     );

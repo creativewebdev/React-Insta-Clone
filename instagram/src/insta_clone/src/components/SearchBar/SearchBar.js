@@ -10,7 +10,7 @@ const searchStyle ={
     margin: '15px'
     
 }
-const SearchBar = () =>{
+const SearchBar = props =>{
     return (
     <div style={searchStyle}>
         <div>
@@ -20,9 +20,11 @@ const SearchBar = () =>{
         </div>
         <div>
             <input 
+            onKeyDown={props.searchPosts}
             type="text"
             name="search"
             placeholder="search"
+            value={props.username}
             />
         </div>
         <div>

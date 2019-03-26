@@ -12,11 +12,12 @@ const AddComments = props => {
 
     return (
     <div>
-    <form onSubmit={props.handleSubmit}>
-    <input style={addComment}  onChange = {props.handleAdd}  
-            type="text"
-            placeholder= "Add Comment..."
-            value={props.commentAdd}/>
+    <form onSubmit={props.addComment}>
+    <input style={addComment}  
+             type="text"
+             value={props.comment}
+             placeholder="Add comment... "
+             onChange={props.changeComment}/>
     </form>
     </div>
     

@@ -18,28 +18,44 @@ class App extends Component {
     
     this.state = {
 
-      data: dummyData,
-      clicks: 0
+      data: [],
+      likes: [],
+      filteredPosts: []
 
     }
   }
 
-
-  handleClickIcon() {
-    this.setState((clicks) => ({
-           clicks: clicks + 1,
-           
-      }));
+  componentDidMount() {
+    console.log(dummyData);
+    this.setState({ data: dummyData });
   }
+  
 
+  postSearch = event => {
+    const data = this.state.data.filter(data => {
+      if (data.username.includes(event.target.value)) {
+        return data;
+      }
+    });
+    this.setState({ filteredPosts: data });
+  };
+
+ 
   render() {
     return (
       <div style={appStyle}>
-        <Header />
+
+        <Header postSearch={this.postSearch}/>
         <div>
-        <PostContainer 
-        data = {this.state.data} 
-        clicks={this.state.clicks}/>
+          
+        <PostContainer
+        
+        data={
+          this.state.filteredPosts.length > 0
+            ? this.state.filteredPosts
+            : this.state.data
+        }
+                                            />
        </div>
       </div>
     );

@@ -3,7 +3,7 @@ import Post from './Post.js'
 
 
 const postDiv = {
-  
+  border: '1px solid black'
 }
 
 const PostContainer = props => {
@@ -17,11 +17,11 @@ return(
         {props.data.map(data => (
           
           <Post 
-
+            addLikes={props.addLikes}
+            likes={props.likes}
             key={data.id}
             data={data}
-            handleClick={props.handleClickIcon}
-            clicks={props.clicks}
+           
           />
           
 
