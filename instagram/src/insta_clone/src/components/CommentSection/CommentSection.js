@@ -1,25 +1,15 @@
 import React from 'react'
 
+const CommentSection = props => {
+        console.log('CommentDiv', props)
+     return(
+        <div>
+                <span><strong>{props.comment.username}</strong></span>
+                <span>{props.comment.text}</span>
+
+        </div>
+     )
+      }
 
 
-
-
-const Comments = props => {
-return( 
-    
-<div> 
-{props.comments.map(comment => 
-
-<div> 
-        <p >{comment.text}</p>
-        <p>-{comment.username}</p>
-        
-
-</div>
-
-
-
-)} 
-</div>)
-}
-export default Comments
+export default CommentSection

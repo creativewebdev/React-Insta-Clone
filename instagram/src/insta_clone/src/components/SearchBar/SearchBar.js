@@ -1,17 +1,24 @@
 import React from 'react'
 
+const searchStyle ={
+    width: '100%',
+    height: 'auto',
+    display: 'flex',
+    alignItems: 'center',
+    
+}
 const SearchBar = () =>{
     return (
-    <div>
-        <i class="fab fa-instagram"></i>
+    <div style={searchStyle}>
+        <i className="fab fa-instagram"></i>
         <input 
         type="text"
         name="search"
         placeholder="search"
         />
-        <i class="far fa-compass"></i>
+        <i className="far fa-compass"></i>
         <i className="far fa-heart"> </i>
-        <i class="far fa-user"></i>
+        <i className="far fa-user"></i>
     </div>
     )
 }

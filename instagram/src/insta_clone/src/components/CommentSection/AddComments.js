@@ -1,20 +1,20 @@
 import React from 'react'
 
-const AddComment = props => {
-return (
-<div>
-
-        <form>
-         <input type="text" name="add" placeholder="Add comment... " />
-        </form>
-
-</div>
-)
-}
 
 
+const AddComments = props => {
 
-export default AddComment
+    return (
+    <div>
 
+    <input    
+            type="text"
+            name="comment"
+            placeholder= "Add Comment..."/>
+    </div>
+    )   
+    
 
-
+    }
+    
+export default AddComments

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data.js'
 import Header from './components/SearchBar/SearchBar.js'
-
 import PostContainer from './components/PostContainer/PostContainer.js'
+
 
 import './App.css';
 
-
+const appStyle = {
+  width: '100%',
+  height: 'auto'
+}
 
 class App extends Component {
   constructor(){
@@ -14,7 +17,7 @@ class App extends Component {
     
     this.state = {
 
-      Data: dummyData,
+      data: dummyData,
 
     }
     
@@ -23,10 +26,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={appStyle}>
         <Header />
-        <PostContainer Data = {this.state.Data}  />
-        
+        <PostContainer data = {this.state.data}  />
+       
       </div>
     );
   }
