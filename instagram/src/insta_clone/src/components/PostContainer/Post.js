@@ -34,6 +34,7 @@ class Post extends Component {
         let likes = this.state.likes + 1;
         this.setState({ likes });
       };
+      
     
    render() {
        return(
@@ -54,7 +55,7 @@ class Post extends Component {
         <CommentContainer 
         comments={this.props.data.comments} 
         value={this.props.comment}
-        handleTodoChange={this.props.changeComment}
+        
         handleAddItems={this.props.addComment} />
       </div>
   
