@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+
 const Div = styled.div`
   display: inline-block;
   color: black;
@@ -51,7 +52,7 @@ class Login extends Component {
         return(
             <Div>
             <Div>
-                <form>
+            <form onSubmit={this.props.handleLogin}>
                    
                     <h2>Welcome To Instaclone</h2>
                     <p>Please Login to Continue</p>
@@ -69,7 +70,7 @@ class Login extends Component {
                             onChange={this.handleChange}
                     />
                     
-                    <Button onClick={this.props.handleLogin} > Log In </Button>
+                    <Button> Log In </Button>
                 </form>
                 
             </Div>
