@@ -41,6 +41,7 @@ class App extends Component {
         return data;
       }
     });
+    console.log(posts)
     this.setState({ filteredPosts: posts });
   };
 

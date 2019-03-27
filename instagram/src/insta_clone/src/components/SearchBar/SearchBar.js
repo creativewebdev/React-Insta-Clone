@@ -31,7 +31,7 @@ const SearchBar = props =>{
         <div>
         <input style={input} type="text" placeholder="Search" 
          onChange={(event) => {props.change(event)
-                          props.postSearch(event)} } />
+                               props.postSearch(event)} } />
         </div>
         <div >
             <i style={insta} className="far fa-compass"></i>

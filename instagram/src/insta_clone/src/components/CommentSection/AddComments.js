@@ -18,6 +18,7 @@ const AddComments = props => {
              value={props.comment}
              placeholder="Add comment... "
              onChange={props.changeComment}/>
+            
     </form>
     </div>
     
