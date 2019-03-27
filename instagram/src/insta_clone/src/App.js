@@ -37,7 +37,7 @@ class App extends Component {
   searchHandler = event => {
     console.log(event.target.value)
     const posts = this.state.data.filter(data => {
-      if (data.username.includes(event.target.value)) {
+      if (event.target.value === data.username ) {
         return data;
       }
     });
