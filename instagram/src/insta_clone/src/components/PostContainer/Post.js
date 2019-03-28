@@ -6,6 +6,7 @@ import Header from './Header'
 import Likes from './Likes'
 import PropTypes from 'prop-types';
 
+
 const Card = styled.div`
     margin: 20px 0;
     font-size: 20px;

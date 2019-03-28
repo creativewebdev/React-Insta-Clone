@@ -4,20 +4,21 @@ import Header from '../SearchBar/SearchBar.js'
 import dummyData from '../../dummy-data.js'
 import styled from 'styled-components'
 
+
 const appStyle = {
-    width: '650px',
+    
     height: 'auto',
     fontSize: '20px',
     display: 'flex',
     justifyContent: 'center',
-    
-    
-    
   }
 
-  const PostDiv = styled.div `
-  width: 100vw;
+const PostDiv = styled.div `
+    background: #F2F2F2;
+    width: 100%;
   `;
+
+
 
 class PostPage extends Component {
     constructor(props){
@@ -54,9 +55,10 @@ class PostPage extends Component {
     <PostDiv >
        
             <Header postSearch={this.searchHandler} change={this.handleChange}/>
-            <button onClick={this.props.handleLogOut}>Log Out</button>
+
+            <span  class="glyphicon glyphicon-log-out" onClick={this.props.handleLogOut}></span>
             
-        <div >
+        
             <PostContainer style={appStyle} 
 
             data={
@@ -66,7 +68,7 @@ class PostPage extends Component {
             }
             />
 
-        </div>
+       
 
 
     </PostDiv>

@@ -3,16 +3,17 @@ import styled from 'styled-components'
 
 const MainDiv = styled.div`
 
-    width: 100vw;
-    height: 50px;
+    width: 100%;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 30px;
-    border: 1px solid black;
-    margin: 5px 0;
-    padding:10px;
-    background:#F2F2F2; 
+   
+    box-shadow: 3px 3px 5px 6px #ccc;
+    padding:0;
+    color: white;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */; 
 
   `  ;
 
@@ -22,28 +23,28 @@ const insta ={
 }
 
 const input = {
-    height: '20px',
+    height: 'auto',
     widht: '40px'
 }
 const SearchBar = props =>{
   
     return (
     <MainDiv>
-        <div style={insta}>
-            <i style={insta} className="fab fa-instagram"></i>
-            <span style={insta}>|</span>
-            <span style={insta}>Instagram</span>
-        </div>
-        <div>
+        
+            <i className="fab fa-instagram"></i>
+            <span > | </span>
+            <span >Instagram</span>
+        
+       
         <input style={input} type="text" placeholder="Search" 
          onChange={(event) => {props.change(event)
                                props.postSearch(event)} } />
-        </div>
-        <div >
-            <i style={insta} className="far fa-compass"></i>
-            <i style={insta} className="far fa-heart"> </i>
-            <i style={insta} className="far fa-user"></i>
-        </div>
+       
+        
+            <i  className="far fa-compass"></i>
+            <i  className="far fa-heart"> </i>
+            <i  className="far fa-user"></i>
+       
     </MainDiv>
     )
 }

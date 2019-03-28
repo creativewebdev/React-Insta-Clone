@@ -24,11 +24,11 @@ const Div = styled.div`
   
 `;
 
-const Input = styled.input`
-margin: 0 10px;
-border-radius: 3px;
-border: 1px solid black;
-`
+    const Input = styled.input`
+    margin: 0 10px;
+    border-radius: 3px;
+    border: 1px solid black;
+`;
 
 class Login extends Component {
     constructor(props){
@@ -63,13 +63,15 @@ class Login extends Component {
                    
                     <h2>Welcome To Instaclone</h2>
                     <p>Please Login to Continue</p>
-                    <Input type='text'
-                           name='username'
-                           placeholer='Username'
+                    <Input 
+                            type='text'
+                            name='username'
+                            placeholer='Username'
+                            required="required"
                             value={this.state.username}
                             onChange={this.handleChange}
                     />
-                    <Input 
+                    <Input  required="required"
                             type='password'
                             name='password'
                             placeholder='Password'

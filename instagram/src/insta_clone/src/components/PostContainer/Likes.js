@@ -25,7 +25,7 @@ const Likes = props => {
       </div>
     </div>,
     <div style={icon} key="likes-container">
-      <div >{props.likes}</div>
+      <div >Likes: {props.likes}</div>
     </div>
   ];
 };

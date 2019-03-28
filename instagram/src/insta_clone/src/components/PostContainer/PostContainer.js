@@ -8,7 +8,7 @@ const Div = styled.div`
   margin: 20px auto;
   font-size: 20px;
   display: flex;
-  width: 100vw;
+  width: 90%;
   flex-direction: column;
   align-items: center;
   background: #F2F2F2;

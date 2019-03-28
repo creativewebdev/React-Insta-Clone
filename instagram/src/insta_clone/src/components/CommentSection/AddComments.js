@@ -1,26 +1,31 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const addComment ={
-    width: '90%',
-    border: 'none',
-    borderTop: '1px solid black',
-    marginTop: '20px',
-    paddingTop: '10px'
-}
+const CommentDiv = styled.div`
+    width: 90%;
+    border: none;
+    border-top:  1px solid black;
+    margin-top:  20px;
+    padding-top: 10px;
+`;
+
+const Input = styled.input`
+width: 100%;
+`;
 
 const AddComments = props => {
 
     return (
-    <div>
+    <CommentDiv>
     <form onSubmit={props.addComment}>
-    <input style={addComment}  
+    <Input  
              type="text"
              value={props.comment}
              placeholder="Add comment... "
              onChange={props.changeComment}/>
             
     </form>
-    </div>
+    </CommentDiv>
     
     )   
     
