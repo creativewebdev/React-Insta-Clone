@@ -1,7 +1,7 @@
 import React from 'react'
 
 const addComment ={
-    width: '100%',
+    width: '90%',
     border: 'none',
     borderTop: '1px solid black',
     marginTop: '20px',

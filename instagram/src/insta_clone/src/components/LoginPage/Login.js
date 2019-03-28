@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const Div = styled.div`
-  display: inline-block;
+ 
   color: black;
   font-size: 1em;
-  width: 100%
-  margin: 1em;
+  width: 100vw;
   border-radius: 3px;
   display: flex;
   text-align: center;
+  align-items: center;
   justify-content: center;
 `;
 

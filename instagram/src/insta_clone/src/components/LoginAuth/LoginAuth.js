@@ -3,8 +3,8 @@ import React from 'react';
 
 const loginAuth = PostsPage => LoginPage =>
   class extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.state = {
         
          loggedIn: false,
@@ -20,6 +20,7 @@ const loginAuth = PostsPage => LoginPage =>
         }
     }
     handleLogin = event => {
+        
         const username = this.state.username;
         localStorage.setItem('username', username);
         

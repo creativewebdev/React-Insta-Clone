@@ -1,28 +1,30 @@
 import React from 'react';
+import styled from 'styled-components'
 
-const img ={
-    borderRadius:'200px',
-    height: '30px',
-    width: '30px',
-}
+const Image = styled.img`
+    border-radius:200px;
+    height: 30px;
+    width: 30px;
+    `;
 
 const headerDiv={
+
     display:'flex',
-    alignItems: 'center',
-    margin: '10px 0'
+    margin: '10px 0',
+    justifyContent: 'flex-start'
 }
 
 const Header = props => {
     
   return (
-    <div >
+    
       <div style={headerDiv}>
-        <img style={img}
+        <Image 
           alt="header image"
           src={props.data.thumbnailUrl}/>
         {props.data.username}
       </div>
-    </div>
+   
   );
 };
 

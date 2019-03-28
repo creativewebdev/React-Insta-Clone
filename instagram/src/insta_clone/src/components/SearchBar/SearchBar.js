@@ -1,15 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const searchStyle ={
-    width: '90%',
-    height: 'auto',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    fontSize: '30px',
-    margin: '15px'
-    
-}
+const MainDiv = styled.div`
+
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    border: 1px solid black;
+    margin: 5px 0;
+    padding:10px;
+    background:#F2F2F2; 
+
+  `  ;
+
 
 const insta ={
     margin: '0 10px'
@@ -22,7 +28,7 @@ const input = {
 const SearchBar = props =>{
   
     return (
-    <div style={searchStyle}>
+    <MainDiv>
         <div style={insta}>
             <i style={insta} className="fab fa-instagram"></i>
             <span style={insta}>|</span>
@@ -38,7 +44,7 @@ const SearchBar = props =>{
             <i style={insta} className="far fa-heart"> </i>
             <i style={insta} className="far fa-user"></i>
         </div>
-    </div>
+    </MainDiv>
     )
 }
 

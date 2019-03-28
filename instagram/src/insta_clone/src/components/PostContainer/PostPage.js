@@ -2,12 +2,22 @@ import React, {Component} from 'react';
 import PostContainer from './PostContainer.js';
 import Header from '../SearchBar/SearchBar.js'
 import dummyData from '../../dummy-data.js'
+import styled from 'styled-components'
 
 const appStyle = {
-    width: '100%',
+    width: '650px',
     height: 'auto',
-    fontSize: '20px'
+    fontSize: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    
+    
+    
   }
+
+  const PostDiv = styled.div `
+  width: 100vw;
+  `;
 
 class PostPage extends Component {
     constructor(props){
@@ -40,27 +50,29 @@ class PostPage extends Component {
 
     render(){
         return(
-            <div style={appStyle}>
+
+    <PostDiv >
+       
+            <Header postSearch={this.searchHandler} change={this.handleChange}/>
             <button onClick={this.props.handleLogOut}>Log Out</button>
-                <Header postSearch={this.searchHandler} change={this.handleChange}/>
-            <div>
-          
-        <PostContainer
-        
-        data={
-          this.state.filteredPosts.length > 0
+            
+        <div >
+            <PostContainer style={appStyle} 
+
+            data={
+            this.state.filteredPosts.length > 0
             ? this.state.filteredPosts
             : this.state.data
+            }
+            />
+
+        </div>
+
+
+    </PostDiv>
+
+            )
         }
-           />
-
-       </div>
-        
-
-            </div>
-
-        )
     }
-}
 
 export default PostPage

@@ -4,7 +4,8 @@ import CommentSection from './CommentSection';
 import PropTypes from 'prop-types';
 
 const container = {
-    width: '45%'
+    width: '90%',
+    margin: '15px'
 }
 class CommentContainer extends React.Component {
   constructor(props) {
