@@ -12,7 +12,8 @@ class CommentContainer extends React.Component {
     super(props);
     this.state = {
       comments: props.comments,
-      comment: ''
+      comment: '',
+      user: localStorage.getItem('username')
     };
   }
   
@@ -23,7 +24,7 @@ class CommentContainer extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const newComment = { text: this.state.comment, username: 'brandon_allison', timestamp: Date.now() };
+    const newComment = { text: this.state.comment, username: this.state.user, timestamp: Date.now() };
     console.log(newComment);
     const comments = this.state.comments.slice();
     comments.push(newComment);
