@@ -46,6 +46,13 @@ class Login extends Component {
         this.setState({ [event.target.name]: event.target.value });
       };
 
+      handleLogin = event => {
+        
+        const username = this.state.username;
+        localStorage.setItem('username', username);
+        
+        
+      };
       
     
     render(){
@@ -70,7 +77,7 @@ class Login extends Component {
                             onChange={this.handleChange}
                     />
                     
-                    <Button> Log In </Button>
+                    <Button onClick={this.handleLogin} > Log In </Button>
                 </form>
                 
             </Div>

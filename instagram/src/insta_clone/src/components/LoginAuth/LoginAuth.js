@@ -9,6 +9,7 @@ const loginAuth = PostsPage => LoginPage =>
         
          loggedIn: false,
          
+         
         
       };
     }
@@ -19,13 +20,7 @@ const loginAuth = PostsPage => LoginPage =>
             this.setState ({loggedIn: false});
         }
     }
-    handleLogin = event => {
-        
-        const username = this.state.username;
-        localStorage.setItem('username', username);
-        
-        
-      };
+    
    handleLogOut = () =>{
     localStorage.removeItem('username'); 
     this.setState({loggedIn: !this.state.loggedIn});
