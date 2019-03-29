@@ -2,7 +2,12 @@ import React from 'react';
 
 const icons={
     display: 'flex',
-    textAlign: 'left'
+    textAlign: 'left',
+   
+}
+
+const icon={
+  margin: ' 0 5px'
 }
 const Likes = props => {
     
@@ -12,15 +17,15 @@ const Likes = props => {
       
       
     >
-      <div>
+      <div style={icon}>
         <i className="heart" className="far fa-heart" onClick={props.addLikes} />
       </div>
-      <div >
+      <div style={icon} >
         <i className="far fa-comment" />
       </div>
     </div>,
-    <div className="like-section" key="likes-container">
-      <div className="like-section-wrapper">{props.likes}</div>
+    <div style={icon} key="likes-container">
+      <div >Likes: {props.likes}</div>
     </div>
   ];
 };

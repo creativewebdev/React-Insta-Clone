@@ -1,70 +1,35 @@
 import React, { Component } from 'react';
-import dummyData from './dummy-data.js'
-import Header from './components/SearchBar/SearchBar.js'
-import PostContainer from './components/PostContainer/PostContainer.js'
+import PostPage from './components/PostContainer/PostPage'
+import LoginPage from './components/LoginPage/Login'
+import loginAuth from './components/LoginAuth/LoginAuth'
+import styled from 'styled-components'
 
+const StyledApp = styled.div`
+  width: 100%;
+  margin:0;
+  padding:0;
+  height: auto;
+  font-size: 20px;
+`;
 
-import './App.css';
-
-const appStyle = {
-  width: '100%',
-  height: 'auto',
-  fontSize: '20px'
-}
 
 class App extends Component {
-  constructor(){
-    super();
-    
-    this.state = {
-
-      data: [],
-      likes: [],
-      filteredPosts: []
+    constructor() {
+        super();
+        this.state = {}
 
     }
-  }
 
-  componentDidMount() {
-    
-    this.setState({ data: dummyData });
-  }
-  
-  handleChange = event => {
-    this.setState({ comment: event.target.value });
-  };
+    render(){
+        return (
 
-  searchHandler = event => {
-    console.log(event.target.value)
-    const posts = this.state.data.filter(data => {
-      if (data.username.includes(event.target.value)) {
-        return data;
-      }
-    });
-    this.setState({ filteredPosts: posts });
-  };
-
- 
-  render() {
-    return (
-      <div style={appStyle}>
-
-        <Header postSearch={this.searchHandler} change={this.handleChange}/>
-        <div>
-          
-        <PostContainer
-        
-        data={
-          this.state.filteredPosts.length > 0
-            ? this.state.filteredPosts
-            : this.state.data
+            <StyledApp>
+               <ComponentLoginAuth />
+            </StyledApp>
+        )
         }
-           />
+    }
 
-       </div>
-      </div>
-    );
-  }
-}
 
-export default App;
+const ComponentLoginAuth = loginAuth (PostPage)(LoginPage);
+export default App

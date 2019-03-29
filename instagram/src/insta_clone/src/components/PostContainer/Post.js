@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import CommentContainer from '../CommentSection/CommentContainer';
+import styled from 'styled-components'
 
 import Header from './Header'
 import Likes from './Likes'
 import PropTypes from 'prop-types';
 
-const card={
-    margin: '20px 0',
-    fontSize: '20px',
-    display: 'flex',
-    width: 'auto',
-    flexDirection: 'column',
-    alignItems: 'center',
-    border: '1px solid black',
+
+const Card = styled.div`
+    margin: 20px 0;
+    font-size: 20px;
+    display: flex;
+    width: 650px;
+    flex-direction: column;
     
-    
-}
+    box-shadow: 3px 3px 5px 6px #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+`;
 
 
 class Post extends Component {
@@ -23,10 +26,7 @@ class Post extends Component {
       super(props);
       
       this.state = {
-  
-        
         likes: props.data.likes
-
       }
     }
 
@@ -38,31 +38,24 @@ class Post extends Component {
     
    render() {
        return(
-        <div style={card}>
-        
-            
-                <Header data={this.props.data}/>
-           
-        
+        <Card>
+          <Header data={this.props.data}/>
           <img
             src={this.props.data.imageUrl}
             alt="post"
           />
-        
-        
-        <Likes data={this.props.data} likes={this.state.likes} addLikes={this.addLikes}/>
-        
-        
-        <CommentContainer style={card}
-        comments={this.props.data.comments} 
-        value={this.props.comment}
-        
-        handleAddItems={this.props.addComment} />
+
+          <Likes data={this.props.data} likes={this.state.likes} addLikes={this.addLikes}/>
+
+          <CommentContainer 
+          comments={this.props.data.comments} 
+          value={this.props.comment}
+          handleAddItems={this.props.addComment} />
       
-      </div>
+      </Card>
   
        )
-}
+  }
 }
     Post.propTypes = {
     post: PropTypes.shape({

@@ -1,10 +1,18 @@
 import React from 'react'
 import Post from './Post.js'
+import styled from 'styled-components'
 
 
-const postDiv = {
-  border: '1px solid black'
-}
+const Div = styled.div`
+  
+  margin: 20px auto;
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  background: #F2F2F2;
+`;
 
 const PostContainer = props => {
     
@@ -12,22 +20,18 @@ const PostContainer = props => {
 
 return(     
  
-<div style={postDiv}>
-
+<Div>
         {props.data.map(data => (
           
           <Post 
             addLikes={props.addLikes}
             likes={props.likes}
             key={data.id}
-            data={data}
-           
+            data={data}  
           />
-          
-
         ))}
 
-</div>
+</Div>
 )
 }
 

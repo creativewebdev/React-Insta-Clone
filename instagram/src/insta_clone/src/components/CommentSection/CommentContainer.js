@@ -2,16 +2,20 @@ import React from 'react';
 import AddComments from './AddComments';
 import CommentSection from './CommentSection';
 import PropTypes from 'prop-types';
+import styled from 'styled-components'
 
-const container = {
-    width: '45%'
-}
+const Div = styled.div`
+    width:  90%;
+    margin: 15px;
+`;
+
 class CommentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       comments: props.comments,
-      comment: ''
+      comment: '',
+      user: localStorage.getItem('username')
     };
   }
   
@@ -22,7 +26,8 @@ class CommentContainer extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const newComment = { text: this.state.comment, username: 'brandon_allison', timestamp: Date.now() };
+    const newComment = { text: this.state.comment, username: this.state.user, timestamp: Date.now() };
+    console.log(newComment);
     const comments = this.state.comments.slice();
     comments.push(newComment);
     this.setState({ comments, comment: '' });
@@ -31,22 +36,25 @@ class CommentContainer extends React.Component {
 
   render() {
     return (
-      <div style ={container}>
+      <Div>
         {this.state.comments.map((comment) => <CommentSection  comment={comment} />)}
 
         <AddComments 
+         
          comment={this.state.comment}
          addComment={this.handleSubmit}
          changeComment={this.handleComment} />
 
-      </div>
+      </Div>
     );
   }
 };
 
 CommentSection.propTypes = {
     comments: PropTypes.arrayOf(
-      PropTypes.shape({ text: PropTypes.string, username: PropTypes.string , id:PropTypes.number})
+      PropTypes.shape({ text: PropTypes.string, 
+        username: PropTypes.string ,
+         id:PropTypes.number})
     )
   };
 
