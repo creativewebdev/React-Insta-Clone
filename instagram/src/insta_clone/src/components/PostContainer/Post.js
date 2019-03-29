@@ -13,7 +13,7 @@ const Card = styled.div`
     display: flex;
     width: 650px;
     flex-direction: column;
-    border: 1px solid black;
+    
     box-shadow: 3px 3px 5px 6px #ccc;
     padding: 10px;
     border-radius: 5px;

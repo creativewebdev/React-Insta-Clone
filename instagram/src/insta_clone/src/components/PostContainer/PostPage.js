@@ -20,6 +20,8 @@ const PostDiv = styled.div `
 
 
 
+
+
 class PostPage extends Component {
     constructor(props){
         super(props)

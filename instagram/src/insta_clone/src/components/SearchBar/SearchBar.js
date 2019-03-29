@@ -24,7 +24,12 @@ const insta ={
 
 const input = {
     height: 'auto',
-    widht: '40px'
+    widht: '40px',
+    borderRadius:'30px',
+    border: 'none',
+    textAlign: 'center',
+    background: 'black',
+
 }
 const SearchBar = props =>{
   
